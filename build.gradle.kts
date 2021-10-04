@@ -17,7 +17,15 @@ kotlin {
     sourceSets {
         jvm()
 
-        val commonMain by getting
+        val commonMain by getting {
+            dependencies {
+                implementation("com.arangodb:arangodb-java-driver:5.0.7")
+                implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.12.5")
+                implementation("org.jetbrains.kotlin:kotlin-reflect:1.5.31")
+                implementation("org.slf4j:slf4j-api:1.7.32")
+                implementation("org.slf4j:slf4j-simple:1.7.32")
+            }
+        }
 
         val commonTest by getting {
             dependencies {

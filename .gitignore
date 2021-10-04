@@ -81,3 +81,6 @@ build
 hs_err_pid*
 
 .DS_Store
+
+# ignore files with secrets
+arangodb.properties
