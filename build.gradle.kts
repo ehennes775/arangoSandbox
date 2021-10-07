@@ -19,7 +19,8 @@ kotlin {
 
         val commonMain by getting {
             dependencies {
-                implementation("com.arangodb:arangodb-java-driver:5.0.7")
+                implementation("com.arangodb:arangodb-java-driver:6.14.0")
+                implementation("com.arangodb:jackson-dataformat-velocypack:2.0.0")
                 implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.12.5")
                 implementation("org.jetbrains.kotlin:kotlin-reflect:1.5.31")
                 implementation("org.slf4j:slf4j-api:1.7.32")
