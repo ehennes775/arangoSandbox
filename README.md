@@ -1,2 +1,2 @@
 # arangoSandbox
-An experimental project using ArangoBD
+An experimental command line application using ArangoBD and Kotlin
