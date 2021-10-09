@@ -1,5 +1,6 @@
 package command
 
+import command.commands.find.FindBuilder
 import command.commands.where.WhereBuilder
 import command.exceptions.CommandExpected
 import command.exceptions.UnknownCommand
@@ -10,6 +11,7 @@ object CommandFactory {
         .elementAtOrElse(0) { throw CommandExpected() }
         .let { commandName ->
             when (commandName) {
+                "find" -> FindBuilder()
                 "where" -> WhereBuilder()
                 else -> throw UnknownCommand(commandName)
             }
