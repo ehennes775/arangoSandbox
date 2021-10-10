@@ -112,7 +112,7 @@ class ArangoDatabase: Database {
     companion object {
 
         const val DATABASE_NAME = "_system"
-        const val SEARCH_VIEW = "searchTest"
+        const val SEARCH_VIEW = "partSpecificationSearch"
 
         const val ELECTRONIC_ASSEMBLY = "electronicAssembly"
         const val ELECTRONIC_ASSEMBLY_VIEW = "electronicAssemblySearch"
