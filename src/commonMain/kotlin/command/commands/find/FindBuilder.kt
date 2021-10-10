@@ -14,7 +14,7 @@ class FindBuilder(
 
     override fun parse(args: Array<String>): FindBuilder {
         return args.fold(this) { builder, arg ->
-            builder.with(arg)
+            builder.with(partNumber = arg)
         }
     }
 
