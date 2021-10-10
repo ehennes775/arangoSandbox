@@ -1,14 +1,13 @@
 package command.commands.find
 
 import command.Command
-import database.arangodb.ArangoDatabase
+import database.Database
 import report.Report
 
 class FindCommand(
+    private val database: Database,
     private val partNumber: String
 ): Command {
-
-    private val database = ArangoDatabase()
 
     override fun execute() {
         database.find(partNumber).let { result ->

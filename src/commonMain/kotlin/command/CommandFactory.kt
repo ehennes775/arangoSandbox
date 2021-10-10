@@ -18,6 +18,6 @@ object CommandFactory {
                 else -> throw UnknownCommand(commandName)
             }
         }
-        .parse(args)
+        .parse(args.drop(1).toTypedArray())
         .build()
 }

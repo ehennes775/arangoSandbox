@@ -2,6 +2,7 @@ package command.commands.where
 
 import command.CommandBuilder
 import command.exceptions.MissingArgument
+import database.arangodb.ArangoDatabase
 
 class WhereBuilder(
     private val partNumber: String? = null
@@ -18,6 +19,7 @@ class WhereBuilder(
     }
 
     override fun build(): WhereCommand = WhereCommand(
+        database = ArangoDatabase(),
         partNumber = partNumber ?: throw MissingArgument()
     )
 }

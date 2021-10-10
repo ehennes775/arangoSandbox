@@ -2,6 +2,7 @@ package command.commands.update
 
 import command.CommandBuilder
 import command.exceptions.MissingArgument
+import database.arangodb.ArangoDatabase
 import java.io.File
 
 class UpdateBuilder(
@@ -21,6 +22,7 @@ class UpdateBuilder(
     }
 
     override fun build(): UpdateCommand = UpdateCommand(
+        database = ArangoDatabase(),
         schematicFiles = schematicFiles
             .map { File(it) }
             .toTypedArray()

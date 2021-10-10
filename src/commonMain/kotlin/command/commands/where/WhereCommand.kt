@@ -2,11 +2,13 @@ package command.commands.where
 
 import database.arangodb.ArangoDatabase
 import command.Command
+import database.Database
 import report.Report
 
-class WhereCommand(private val partNumber: String): Command {
-
-    private val database = ArangoDatabase()
+class WhereCommand(
+    private val database: Database,
+    private val partNumber: String
+    ): Command {
 
     override fun execute() {
         database.where(partNumber).let { result ->

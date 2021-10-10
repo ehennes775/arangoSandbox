@@ -2,6 +2,7 @@ package command.commands.find
 
 import command.CommandBuilder
 import command.exceptions.MissingArgument
+import database.arangodb.ArangoDatabase
 
 class FindBuilder(
     private val partNumber: String? = null
@@ -18,6 +19,7 @@ class FindBuilder(
     }
 
     override fun build(): FindCommand = FindCommand(
+        database = ArangoDatabase(),
         partNumber = partNumber ?: throw MissingArgument()
     )
 }

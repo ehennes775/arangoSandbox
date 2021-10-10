@@ -1,14 +1,13 @@
 package command.commands.update
 
 import command.Command
-import database.arangodb.ArangoDatabase
+import database.Database
 import java.io.File
 
 class UpdateCommand(
-    schematicFiles: Array<File>
+    val database: Database,
+    val schematicFiles: Array<File>
 ): Command {
-
-    private val database = ArangoDatabase()
 
     override fun execute() {
     }
