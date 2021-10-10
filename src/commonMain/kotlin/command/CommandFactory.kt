@@ -1,6 +1,7 @@
 package command
 
 import command.commands.find.FindBuilder
+import command.commands.update.UpdateBuilder
 import command.commands.where.WhereBuilder
 import command.exceptions.CommandExpected
 import command.exceptions.UnknownCommand
@@ -12,6 +13,7 @@ object CommandFactory {
         .let { commandName ->
             when (commandName) {
                 "find" -> FindBuilder()
+                "update" -> UpdateBuilder()
                 "where" -> WhereBuilder()
                 else -> throw UnknownCommand(commandName)
             }
